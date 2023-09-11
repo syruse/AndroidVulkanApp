@@ -1,3 +1,0 @@
-C:/Development/AndroidVulkan/app/.cxx/Debug/y6y3p4v3/arm64-v8a/CMakeFiles/my_engine.dir
-C:/Development/AndroidVulkan/app/.cxx/Debug/y6y3p4v3/arm64-v8a/CMakeFiles/edit_cache.dir
-C:/Development/AndroidVulkan/app/.cxx/Debug/y6y3p4v3/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,0 @@
-C:/Development/ndk-samples-main/hello-vulkan/app/.cxx/Debug/232a5f50/arm64-v8a/CMakeFiles/hellovkjni.dir
-C:/Development/ndk-samples-main/hello-vulkan/app/.cxx/Debug/232a5f50/arm64-v8a/CMakeFiles/edit_cache.dir
-C:/Development/ndk-samples-main/hello-vulkan/app/.cxx/Debug/232a5f50/arm64-v8a/CMakeFiles/rebuild_cache.dir

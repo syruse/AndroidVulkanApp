@@ -1,8 +1,0 @@
-# ninja log v5
-1	1583	716058993	CMakeFiles/my_engine.dir/vk_main.cpp.o	39b726c4f3859f7f
-1585	1699	716058993	C:/Development/AndroidVulkan/app/build/intermediates/cxx/Debug/24222m2r/obj/x86_64/libmy_engine.so	4e47b27290ef956a
-1	86	716061930	build.ninja	c61e55678b414b6f
-0	8	0	clean	af0c587b2f6c68e3
-1	79	716061938	build.ninja	c61e55678b414b6f
-3	1547	716061940	CMakeFiles/my_engine.dir/vk_main.cpp.o	39b726c4f3859f7f
-1547	1638	716061940	C:/Development/AndroidVulkan/app/build/intermediates/cxx/Debug/24222m2r/obj/x86_64/libmy_engine.so	4e47b27290ef956a

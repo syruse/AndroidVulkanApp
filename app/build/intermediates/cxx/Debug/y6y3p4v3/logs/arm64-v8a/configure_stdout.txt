@@ -1,3 +1,0 @@
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Development/AndroidVulkan/app/.cxx/Debug/y6y3p4v3/arm64-v8a

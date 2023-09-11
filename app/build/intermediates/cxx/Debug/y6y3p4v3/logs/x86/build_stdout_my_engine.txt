@@ -1,2 +1,0 @@
-ninja: Entering directory `C:\Development\AndroidVulkan\app\.cxx\Debug\y6y3p4v3\x86'
-ninja: no work to do.
