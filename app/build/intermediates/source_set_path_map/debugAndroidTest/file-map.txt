@@ -1,0 +1,5 @@
+com.android.myapp.test.app-androidTest-0 C:\Development\AndroidVulkan\app\build\generated\res\resValues\androidTest\debug
+com.android.myapp.test.app-androidTest-1 C:\Development\AndroidVulkan\app\build\generated\res\rs\androidTest\debug
+com.android.myapp.test.app-mergeDebugAndroidTestResources-2 C:\Development\AndroidVulkan\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.android.myapp.test.app-mergeDebugAndroidTestResources-3 C:\Development\AndroidVulkan\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.android.myapp.test.app-merged_res-4 C:\Development\AndroidVulkan\app\build\intermediates\merged_res\debugAndroidTest

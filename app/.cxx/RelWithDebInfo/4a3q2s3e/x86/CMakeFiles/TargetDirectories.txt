@@ -1,0 +1,3 @@
+C:/Development/ndk-samples-main/hello-vulkan/app/.cxx/RelWithDebInfo/4a3q2s3e/x86/CMakeFiles/hellovkjni.dir
+C:/Development/ndk-samples-main/hello-vulkan/app/.cxx/RelWithDebInfo/4a3q2s3e/x86/CMakeFiles/edit_cache.dir
+C:/Development/ndk-samples-main/hello-vulkan/app/.cxx/RelWithDebInfo/4a3q2s3e/x86/CMakeFiles/rebuild_cache.dir

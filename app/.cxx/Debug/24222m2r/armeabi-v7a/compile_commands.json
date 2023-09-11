@@ -1,0 +1,7 @@
+[
+{
+  "directory": "C:/Development/AndroidVulkan/app/.cxx/Debug/24222m2r/armeabi-v7a",
+  "command": "C:\\Users\\s_y_r\\AppData\\Local\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi30 --sysroot=C:/Users/s_y_r/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DVK_USE_PLATFORM_ANDROID_KHR=1 -Dmy_engine_EXPORTS -isystem C:/Users/s_y_r/.gradle/caches/transforms-3/5c09d8652f4603aec8db53cec70f5fa0/transformed/jetified-games-activity-1.2.2-alpha01/prefab/modules/game-activity_static/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=c++17 -Wall -fno-limit-debug-info  -fPIC -o CMakeFiles\\my_engine.dir\\vk_main.cpp.o -c C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\vk_main.cpp",
+  "file": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\vk_main.cpp"
+}
+]

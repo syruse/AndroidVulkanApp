@@ -1,0 +1,464 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 30 min SDK version: arm64-v8a",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -61772680
+  },
+  {
+    "level_": 0,
+    "message_": "rebuilding JSON C:\\Development\\AndroidVulkan\\app\\.cxx\\Debug\\y6y3p4v3\\arm64-v8a\\android_gradle_build.json due to:",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 69117599
+  },
+  {
+    "level_": 0,
+    "message_": "- a file changed",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 75178482
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 937827967
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1298772954
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -492848980
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\include (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -314794520
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\include\\game-activity (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 128634606
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\include\\game-activity\\native_app_glue (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1102217305
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\include\\game-text-input (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 701418117
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\libs (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1803005446
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\libs\\android.arm64-v8a (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -60326529
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\libs\\android.armeabi-v7a (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1222431619
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\libs\\android.x86 (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1678353745
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity\\libs\\android.x86_64 (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -87150908
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -84356999
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\include (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 2103154869
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\include\\game-activity (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1170235131
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\include\\game-activity\\native_app_glue (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1531467366
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\include\\game-text-input (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 952142674
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\libs (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1763119693
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\libs\\android.arm64-v8a (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -2130448622
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\libs\\android.armeabi-v7a (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -2039904944
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\libs\\android.x86 (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1827897636
+  },
+  {
+    "level_": 0,
+    "message_": "  - C:\\Users\\s_y_r\\.gradle\\caches\\transforms-3\\bd8bf4dccf63e39dd20023c2bbb3b716\\transformed\\jetified-games-activity-1.2.2-alpha01\\prefab\\modules\\game-activity_static\\libs\\android.x86_64 (LAST_MODIFIED_CHANGED)",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1093819921
+  },
+  {
+    "level_": 0,
+    "message_": "@echo off\n\"C:\\\\Program Files\\\\Android\\\\Android Studio\\\\jbr\\\\bin\\\\java\" ^\n  --class-path ^\n  \"C:\\\\Users\\\\s_y_r\\\\.gradle\\\\caches\\\\modules-2\\\\files-2.1\\\\com.google.prefab\\\\cli\\\\2.0.0\\\\f2702b5ca13df54e3ca92f29d6b403fb6285d8df\\\\cli-2.0.0-all.jar\" ^\n  com.google.prefab.cli.AppKt ^\n  --build-system ^\n  cmake ^\n  --platform ^\n  android ^\n  --abi ^\n  arm64-v8a ^\n  --os-version ^\n  30 ^\n  --stl ^\n  c++_shared ^\n  --ndk-version ^\n  25 ^\n  --output ^\n  \"C:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Temp\\\\agp-prefab-staging17896846903210165122\\\\staged-cli-output\" ^\n  \"C:\\\\Users\\\\s_y_r\\\\.gradle\\\\caches\\\\transforms-3\\\\bd8bf4dccf63e39dd20023c2bbb3b716\\\\transformed\\\\jetified-games-activity-1.2.2-alpha01\\\\prefab\"\n",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -2072773959
+  },
+  {
+    "level_": 0,
+    "message_": "keeping json folder \u0027C:\\Development\\AndroidVulkan\\app\\.cxx\\Debug\\y6y3p4v3\\arm64-v8a\u0027 but regenerating project",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 869948065
+  },
+  {
+    "level_": 0,
+    "message_": "executing cmake @echo off\n\"C:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\cmake.exe\" ^\n  \"-HC:\\\\Development\\\\AndroidVulkan\\\\app\\\\src\\\\main\\\\cpp\" ^\n  \"-DCMAKE_SYSTEM_NAME\u003dAndroid\" ^\n  \"-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\" ^\n  \"-DCMAKE_SYSTEM_VERSION\u003d30\" ^\n  \"-DANDROID_PLATFORM\u003dandroid-30\" ^\n  \"-DANDROID_ABI\u003darm64-v8a\" ^\n  \"-DCMAKE_ANDROID_ARCH_ABI\u003darm64-v8a\" ^\n  \"-DANDROID_NDK\u003dC:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\25.1.8937393\" ^\n  \"-DCMAKE_ANDROID_NDK\u003dC:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\25.1.8937393\" ^\n  \"-DCMAKE_TOOLCHAIN_FILE\u003dC:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\25.1.8937393\\\\build\\\\cmake\\\\android.toolchain.cmake\" ^\n  \"-DCMAKE_MAKE_PROGRAM\u003dC:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\ninja.exe\" ^\n  \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\\\Development\\\\AndroidVulkan\\\\app\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\y6y3p4v3\\\\obj\\\\arm64-v8a\" ^\n  \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\\\Development\\\\AndroidVulkan\\\\app\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\y6y3p4v3\\\\obj\\\\arm64-v8a\" ^\n  \"-DCMAKE_BUILD_TYPE\u003dDebug\" ^\n  \"-DCMAKE_FIND_ROOT_PATH\u003dC:\\\\Development\\\\AndroidVulkan\\\\app\\\\.cxx\\\\Debug\\\\y6y3p4v3\\\\prefab\\\\arm64-v8a\\\\prefab\" ^\n  \"-BC:\\\\Development\\\\AndroidVulkan\\\\app\\\\.cxx\\\\Debug\\\\y6y3p4v3\\\\arm64-v8a\" ^\n  -GNinja ^\n  \"-DANDROID_STL\u003dc++_shared\"\n",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -674344728
+  },
+  {
+    "level_": 0,
+    "message_": "@echo off\n\"C:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\cmake.exe\" ^\n  \"-HC:\\\\Development\\\\AndroidVulkan\\\\app\\\\src\\\\main\\\\cpp\" ^\n  \"-DCMAKE_SYSTEM_NAME\u003dAndroid\" ^\n  \"-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\" ^\n  \"-DCMAKE_SYSTEM_VERSION\u003d30\" ^\n  \"-DANDROID_PLATFORM\u003dandroid-30\" ^\n  \"-DANDROID_ABI\u003darm64-v8a\" ^\n  \"-DCMAKE_ANDROID_ARCH_ABI\u003darm64-v8a\" ^\n  \"-DANDROID_NDK\u003dC:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\25.1.8937393\" ^\n  \"-DCMAKE_ANDROID_NDK\u003dC:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\25.1.8937393\" ^\n  \"-DCMAKE_TOOLCHAIN_FILE\u003dC:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\ndk\\\\25.1.8937393\\\\build\\\\cmake\\\\android.toolchain.cmake\" ^\n  \"-DCMAKE_MAKE_PROGRAM\u003dC:\\\\Users\\\\s_y_r\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\cmake\\\\3.22.1\\\\bin\\\\ninja.exe\" ^\n  \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\\\Development\\\\AndroidVulkan\\\\app\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\y6y3p4v3\\\\obj\\\\arm64-v8a\" ^\n  \"-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\\\Development\\\\AndroidVulkan\\\\app\\\\build\\\\intermediates\\\\cxx\\\\Debug\\\\y6y3p4v3\\\\obj\\\\arm64-v8a\" ^\n  \"-DCMAKE_BUILD_TYPE\u003dDebug\" ^\n  \"-DCMAKE_FIND_ROOT_PATH\u003dC:\\\\Development\\\\AndroidVulkan\\\\app\\\\.cxx\\\\Debug\\\\y6y3p4v3\\\\prefab\\\\arm64-v8a\\\\prefab\" ^\n  \"-BC:\\\\Development\\\\AndroidVulkan\\\\app\\\\.cxx\\\\Debug\\\\y6y3p4v3\\\\arm64-v8a\" ^\n  -GNinja ^\n  \"-DANDROID_STL\u003dc++_shared\"\n",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -875119705
+  },
+  {
+    "level_": 0,
+    "message_": "Exiting generation of C:\\Development\\AndroidVulkan\\app\\.cxx\\Debug\\y6y3p4v3\\arm64-v8a\\compile_commands.json.bin normally",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1800904999
+  },
+  {
+    "level_": 0,
+    "message_": "done executing cmake",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1390537583
+  },
+  {
+    "level_": 0,
+    "message_": "deleted unexpected build output C:\\Development\\AndroidVulkan\\app\\build\\intermediates\\cxx\\Debug\\y6y3p4v3\\obj\\arm64-v8a\\libc++_shared.so in incremental regenerate",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 627010614
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed without problems",
+    "file_": "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 547535501
+  }
+]

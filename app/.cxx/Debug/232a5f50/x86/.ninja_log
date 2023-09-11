@@ -1,0 +1,5 @@
+# ninja log v5
+1	1961	715887862	CMakeFiles/hellovkjni.dir/vk_main.cpp.o	c9319f71bbdbde0e
+1964	2083	715887862	C:/Development/ndk-samples-main/hello-vulkan/app/build/intermediates/cxx/Debug/232a5f50/obj/x86/libhellovkjni.so	20a0b4753dd41517
+10	1861	715888690	CMakeFiles/hellovkjni.dir/vk_main.cpp.o	c9319f71bbdbde0e
+1861	2020	715888690	C:/Development/ndk-samples-main/hello-vulkan/app/build/intermediates/cxx/Debug/232a5f50/obj/x86/libhellovkjni.so	20a0b4753dd41517

@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\Development\AndroidVulkan\app\.cxx\Debug\y6y3p4v3\armeabi-v7a'
+ninja: no work to do.

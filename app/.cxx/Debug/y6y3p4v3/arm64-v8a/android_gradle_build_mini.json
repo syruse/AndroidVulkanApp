@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "C:\\Development\\AndroidVulkan\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\s_y_r\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Development\\AndroidVulkan\\app\\.cxx\\Debug\\y6y3p4v3\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\s_y_r\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Development\\AndroidVulkan\\app\\.cxx\\Debug\\y6y3p4v3\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "my_engine::@6890427a1f51a3e7e1df": {
+      "artifactName": "my_engine",
+      "abi": "arm64-v8a",
+      "output": "C:\\Development\\AndroidVulkan\\app\\build\\intermediates\\cxx\\Debug\\y6y3p4v3\\obj\\arm64-v8a\\libmy_engine.so",
+      "runtimeFiles": []
+    }
+  }
+}
