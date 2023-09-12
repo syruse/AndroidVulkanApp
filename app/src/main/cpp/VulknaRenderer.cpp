@@ -32,30 +32,6 @@ void VulkanRenderer::init(ANativeWindow *newWindow, AAssetManager *newManager) {
     m_initialized = true;
 }
 
-// mapping required memory property into a VK memory type
-// memory type is an index of 32 entries; or the bit index
-// for the memory type ( each BIT of an 32 bit integer is a type ).
-VkResult VulkanRenderer::allocateMemoryTypeFromProperties(uint32_t typeBits,
-                                          VkFlags requirements_mask,
-                                          uint32_t* typeIndex) {
-    VkPhysicalDeviceMemoryProperties memProps;
-    vkGetPhysicalDeviceMemoryProperties(m_core.getPhysDevice(), &memProps);
-    // Search memtypes to find first index with those properties
-    for (uint32_t i = 0; i < 32; i++) {
-        if ((typeBits & 1) == 1) {
-            // Type is available, does it match user properties?
-            if ((memProps.memoryTypes[i].propertyFlags &
-                 requirements_mask) == requirements_mask) {
-                *typeIndex = i;
-                return VK_SUCCESS;
-            }
-        }
-        typeBits >>= 1;
-    }
-    // No memory types matched, return failure
-    return VK_ERROR_MEMORY_MAP_FAILED;
-}
-
 void VulkanRenderer::loadTextureFromFile(const char* filePath,
                                              Texture* texture,
                                              VkImageUsageFlags usage, VkFlags required_props) {
@@ -127,7 +103,7 @@ void VulkanRenderer::loadTextureFromFile(const char* filePath,
                           &texture->image));
     vkGetImageMemoryRequirements(m_core.getDevice(), texture->image, &mem_reqs);
     mem_alloc.allocationSize = mem_reqs.size;
-    VK_CHECK(allocateMemoryTypeFromProperties(mem_reqs.memoryTypeBits,
+    VK_CHECK(allocateMemoryTypeFromProperties(m_core.getPhysDevice(), mem_reqs.memoryTypeBits,
                                               VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT,
                                               &mem_alloc.memoryTypeIndex));
     VK_CHECK(vkAllocateMemory(m_core.getDevice(), &mem_alloc, nullptr, &texture->mem));
@@ -216,7 +192,7 @@ void VulkanRenderer::loadTextureFromFile(const char* filePath,
 
         mem_alloc.allocationSize = mem_reqs.size;
         VK_CHECK(allocateMemoryTypeFromProperties(
-                mem_reqs.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
+                m_core.getPhysDevice(), mem_reqs.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
                 &mem_alloc.memoryTypeIndex));
         VK_CHECK(
                 vkAllocateMemory(m_core.getDevice(), &mem_alloc, nullptr, &texture->mem));
@@ -350,26 +326,11 @@ void VulkanRenderer::createBuffer(VkDeviceSize size, VkBufferUsageFlags usage,
     allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
     allocInfo.allocationSize = memRequirements.size;
     allocInfo.memoryTypeIndex =
-            findMemoryType(memRequirements.memoryTypeBits, properties);
+            findMemoryType(m_core.getPhysDevice(), memRequirements.memoryTypeBits, properties);
 
     VK_CHECK(vkAllocateMemory(m_core.getDevice(), &allocInfo, nullptr, &bufferMemory));
 
     vkBindBufferMemory(m_core.getDevice(), buffer, bufferMemory, 0);
-}
-
-uint32_t VulkanRenderer::findMemoryType(uint32_t typeFilter,
-                                        VkMemoryPropertyFlags properties) {
-    VkPhysicalDeviceMemoryProperties memProperties;
-    vkGetPhysicalDeviceMemoryProperties(m_core.getPhysDevice(), &memProperties);
-
-    for (uint32_t i = 0; i < memProperties.memoryTypeCount; i++) {
-        if ((typeFilter & (1 << i)) && (memProperties.memoryTypes[i].propertyFlags &
-                                        properties) == properties) {
-            return i;
-        }
-    }
-
-    abort();
 }
 
 void VulkanRenderer::createUniformBuffers() {
@@ -422,7 +383,6 @@ void VulkanRenderer::render() {
         return;
     }
     if (m_orientationChanged) {
-        onOrientationChange();
         return;
     }
 
@@ -556,11 +516,6 @@ void VulkanRenderer::updateUniformBuffer(uint32_t currentImage) {
                 &data);
     memcpy(data, &ubo, sizeof(ubo));
     vkUnmapMemory(m_core.getDevice(), m_uniformBuffersMemory[currentImage]);
-}
-
-void VulkanRenderer::onOrientationChange() {
-    recreateSwapChain();
-    m_orientationChanged = false;
 }
 
 void VulkanRenderer::recordCommandBuffer(VkCommandBuffer commandBuffer,
@@ -762,8 +717,8 @@ void VulkanRenderer::createGraphicsPipeline() {
     auto fragShaderCode =
             LoadBinaryFileToVector("shaders/shader.frag.spv", m_core.getAssetManager());
 
-    VkShaderModule vertShaderModule = createShaderModule(vertShaderCode);
-    VkShaderModule fragShaderModule = createShaderModule(fragShaderCode);
+    VkShaderModule vertShaderModule = createShaderModule(m_core.getDevice(), vertShaderCode);
+    VkShaderModule fragShaderModule = createShaderModule(m_core.getDevice(),fragShaderCode);
 
     VkPipelineShaderStageCreateInfo vertShaderStageInfo{};
     vertShaderStageInfo.sType =
@@ -888,18 +843,6 @@ void VulkanRenderer::createGraphicsPipeline() {
                                        nullptr, &m_graphicsPipeline));
     vkDestroyShaderModule(m_core.getDevice(), fragShaderModule, nullptr);
     vkDestroyShaderModule(m_core.getDevice(), vertShaderModule, nullptr);
-}
-
-VkShaderModule VulkanRenderer::createShaderModule(const std::vector<uint8_t> &code) {
-    VkShaderModuleCreateInfo createInfo{};
-    createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-    createInfo.codeSize = code.size();
-
-    createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
-    VkShaderModule shaderModule;
-    VK_CHECK(vkCreateShaderModule(m_core.getDevice(), &createInfo, nullptr, &shaderModule));
-
-    return shaderModule;
 }
 
 void VulkanRenderer::createFramebuffers() {

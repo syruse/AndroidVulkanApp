@@ -38,6 +38,17 @@ namespace Utils {
         std::vector<std::vector<VkPresentModeKHR>> m_presentModes;
     };
 
+    VkShaderModule createShaderModule(VkDevice device, const std::vector<uint8_t> &code);
+
+    uint32_t findMemoryType(VkPhysicalDevice physDevice, uint32_t typeFilter,
+                            VkMemoryPropertyFlags properties);
+
+    // mapping required memory property into a VK memory type
+    // memory type is an index of 32 entries; or the bit index
+    // for the memory type ( each BIT of an 32 bit integer is a type ).
+    VkResult allocateMemoryTypeFromProperties(VkPhysicalDevice physDevice, uint32_t typeBits,
+                                              VkFlags requirements_mask, uint32_t *typeIndex);
+
     void setImageLayout(VkCommandBuffer cmdBuffer, VkImage image,
                         VkImageLayout oldImageLayout, VkImageLayout newImageLayout,
                         VkPipelineStageFlags srcStages,

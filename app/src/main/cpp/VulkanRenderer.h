@@ -34,10 +34,6 @@ public:
 
     void cleanupSwapChain();
 
-    bool isInitialized() {
-        return m_initialized;
-    }
-
     void setHSVFactors(float hue, float saturation, float intensity) {
         m_hsvFactors.HSV[0] = std::clamp(hue, 0.0f, 1.0f);;
         m_hsvFactors.HSV[1] = std::clamp(saturation, 0.0f, 1.0f);;
@@ -63,16 +59,9 @@ private:
 
     void createSyncObjects();
 
-    VkShaderModule createShaderModule(const std::vector<uint8_t> &code);
-
     void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
 
     void recreateSwapChain();
-
-    void onOrientationChange();
-
-    uint32_t findMemoryType(uint32_t typeFilter,
-                            VkMemoryPropertyFlags properties);
 
     void createBuffer(VkDeviceSize size, VkBufferUsageFlags usage,
                       VkMemoryPropertyFlags properties, VkBuffer &buffer,
@@ -91,10 +80,6 @@ private:
                              VkImageUsageFlags usage, VkFlags required_props);
 
     void createTexture();
-
-    VkResult allocateMemoryTypeFromProperties(uint32_t typeBits,
-                                              VkFlags requirements_mask,
-                                              uint32_t *typeIndex);
 
 private:
     VulkanCore m_core;

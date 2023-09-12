@@ -23,6 +23,53 @@ namespace Utils {
         return file_content;
     }
 
+    VkShaderModule createShaderModule(VkDevice device, const std::vector<uint8_t> &code) {
+        VkShaderModuleCreateInfo createInfo{};
+        createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+        createInfo.codeSize = code.size();
+
+        createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
+        VkShaderModule shaderModule;
+        VK_CHECK(vkCreateShaderModule(device, &createInfo, nullptr, &shaderModule));
+
+        return shaderModule;
+    }
+
+    VkResult allocateMemoryTypeFromProperties(VkPhysicalDevice physDevice, uint32_t typeBits,
+                                              VkFlags requirements_mask, uint32_t *typeIndex) {
+        VkPhysicalDeviceMemoryProperties memProps;
+        vkGetPhysicalDeviceMemoryProperties(physDevice, &memProps);
+        // Search memtypes to find first index with those properties
+        for (uint32_t i = 0; i < 32; i++) {
+            if ((typeBits & 1) == 1) {
+                // Type is available, does it match user properties?
+                if ((memProps.memoryTypes[i].propertyFlags &
+                     requirements_mask) == requirements_mask) {
+                    *typeIndex = i;
+                    return VK_SUCCESS;
+                }
+            }
+            typeBits >>= 1;
+        }
+        // No memory types matched, return failure
+        return VK_ERROR_MEMORY_MAP_FAILED;
+    }
+
+    uint32_t findMemoryType(VkPhysicalDevice physDevice, uint32_t typeFilter,
+                            VkMemoryPropertyFlags properties) {
+        VkPhysicalDeviceMemoryProperties memProperties;
+        vkGetPhysicalDeviceMemoryProperties(physDevice, &memProperties);
+
+        for (uint32_t i = 0; i < memProperties.memoryTypeCount; i++) {
+            if ((typeFilter & (1 << i)) && (memProperties.memoryTypes[i].propertyFlags &
+                                            properties) == properties) {
+                return i;
+            }
+        }
+
+        return UINT_MAX;
+    }
+
     void setImageLayout(VkCommandBuffer cmdBuffer, VkImage image,
                         VkImageLayout oldImageLayout, VkImageLayout newImageLayout,
                         VkPipelineStageFlags srcStages,
