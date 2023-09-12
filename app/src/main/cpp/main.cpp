@@ -19,14 +19,11 @@
  * vkt::VulkanRenderer - a pointer to our (this) Vulkan application in order to call
  *  the rendering logic
  *
- * bool canRender - a flag which signals that we are ready to call the vulkan
- * rendering logic
- *
  */
 struct VulkanEngine {
-    struct android_app *app;
-    VulkanRenderer *app_backend;
-    bool canRender = false;
+    struct android_app *app{nullptr};
+    VulkanRenderer *app_backend{nullptr};
+    bool canRender{false};
 };
 
 /**
@@ -36,31 +33,21 @@ struct VulkanEngine {
 static void HandleCmd(struct android_app *app, int32_t cmd) {
     auto *engine = (VulkanEngine *) app->userData;
     switch (cmd) {
-        case APP_CMD_START:
-            if (engine->app->window != nullptr) {
-                engine->app_backend->reset(app->window, app->activity->assetManager);
-                engine->app_backend->init();
-                engine->canRender = true;
-            }
         case APP_CMD_INIT_WINDOW:
             // The window is being shown, get it ready.
             LOGI("Called - APP_CMD_INIT_WINDOW");
             if (engine->app->window != nullptr) {
                 LOGI("Setting a new surface");
-                engine->app_backend->reset(app->window, app->activity->assetManager);
-                if (!engine->app_backend->isInitialized()) {
-                    LOGI("Starting application");
-                    engine->app_backend->init();
-                }
+                engine->app_backend->init(app->window, app->activity->assetManager);
                 engine->canRender = true;
             }
             break;
         case APP_CMD_TERM_WINDOW:
-            // The window is being hidden or closed, clean it up.
+            // The window is being hidden or closed
             engine->canRender = false;
             break;
         case APP_CMD_DESTROY:
-            // The window is being hidden or closed, clean it up.
+            // The window is going to be destroyed clean it up.
             LOGI("Destroying");
             engine->app_backend->cleanup();
         default:
@@ -105,10 +92,11 @@ static void HandleInputEvents(struct android_app *app) {
  * This can also be achieved more verbosely by manually declaring JNI functions
  * and calling them from the Android application layer.
  */
-void android_main(struct android_app *state) {
-    VulkanEngine engine{};
-    VulkanRenderer vulkanBackend{};
 
+VulkanEngine engine{};
+VulkanRenderer vulkanBackend{};
+
+void android_main(struct android_app *state) {
     engine.app = state;
     engine.app_backend = &vulkanBackend;
     state->userData = &engine;
@@ -132,4 +120,13 @@ void android_main(struct android_app *state) {
 
         engine.app_backend->render();
     }
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_android_myapp_VulkanActivity_applyFilterOverJNI(JNIEnv *env, jobject thiz,
+                                                         jfloat hue_factor, jfloat saturation_facto,
+                                                         jfloat intensity_facto) {
+    vulkanBackend.setHSVFactors(hue_factor, saturation_facto, intensity_facto);
+    return true;
 }

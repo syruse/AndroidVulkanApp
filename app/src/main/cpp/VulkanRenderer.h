@@ -26,7 +26,7 @@ class VulkanRenderer {
     };
 
 public:
-    void init();
+    void init(ANativeWindow *newWindow, AAssetManager *newManager);
 
     void render();
 
@@ -34,10 +34,14 @@ public:
 
     void cleanupSwapChain();
 
-    void reset(ANativeWindow *newWindow, AAssetManager *newManager);
-
     bool isInitialized() {
         return m_initialized;
+    }
+
+    void setHSVFactors(float hue, float saturation, float intensity) {
+        m_hsvFactors.HSV[0] = std::clamp(hue, 0.0f, 1.0f);;
+        m_hsvFactors.HSV[1] = std::clamp(saturation, 0.0f, 1.0f);;
+        m_hsvFactors.HSV[2] = std::clamp(intensity, 0.0f, 1.0f);;
     }
 
 private:

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
@@ -14,6 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.text.style.TextAlign
 import androidx.fragment.app.Fragment
 
 class ControlsFragment : Fragment() {
@@ -33,24 +35,54 @@ class ControlsFragment : Fragment() {
                     Column(modifier = Modifier.weight(1f)) {
                         Slider(
                             value = sliderHuePosition,
-                            onValueChange = { AppState.setHue(it) }
+                            onValueChange = {
+                                AppState.setHue(it)
+                            }
                         )
-                        Text(text = "Hue ${String.format("%.1f", sliderHuePosition)}")
+                        Text(
+                            modifier = Modifier.align(Alignment.CenterHorizontally),
+                            style = MaterialTheme.typography.titleLarge,
+                            text = "Hue ${String.format("%.1f", sliderHuePosition)}"
+                        )
                     }
                     Column(modifier = Modifier.weight(1f)) {
                         Slider(
                             value = sliderSaturationPosition,
                             onValueChange = { AppState.setSaturation(it) }
                         )
-                        Text(text = "Saturation ${String.format("%.1f", sliderSaturationPosition)}")
+                        Text(
+                            modifier = Modifier.align(Alignment.CenterHorizontally),
+                            style = MaterialTheme.typography.titleLarge,
+                            text = "Saturation ${String.format("%.1f", sliderSaturationPosition)}"
+                        )
                     }
                     Column(modifier = Modifier.weight(1f)) {
                         Slider(
                             value = sliderIntensityPosition,
                             onValueChange = { AppState.setIntensity(it) }
                         )
-                        Text(text = "Intensity ${String.format("%.1f", sliderIntensityPosition)}")
+                        Text(
+                            modifier = Modifier.align(Alignment.CenterHorizontally),
+                            style = MaterialTheme.typography.titleLarge,
+                            text = "Intensity ${String.format("%.1f", sliderIntensityPosition)}"
+                        )
                     }
+                }
+                Row(
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Text(
+                        text = "Before",
+                        modifier = Modifier.weight(1f),
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.displayLarge
+                    )
+                    Text(
+                        text = "After",
+                        modifier = Modifier.weight(1f),
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.displayLarge,
+                    )
                 }
             }
         }

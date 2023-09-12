@@ -9,8 +9,12 @@
 
 using namespace Utils;
 
-void VulkanRenderer::init() {
-    m_core.init();
+void VulkanRenderer::init(ANativeWindow *newWindow, AAssetManager *newManager) {
+    assert(newWindow && newManager);
+    m_core.init(newWindow, newManager);
+    if (m_initialized) {
+        cleanup();
+    }
     vkGetDeviceQueue(m_core.getDevice(), m_core.getQueueFamily(), 0, &m_queue);
     createSwapChain();
     createImageViews();
@@ -403,14 +407,6 @@ void VulkanRenderer::createDescriptorSetLayout() {
 
     VK_CHECK(vkCreateDescriptorSetLayout(m_core.getDevice(), &layoutInfo, nullptr,
                                          &m_descriptorSetLayout));
-}
-
-void VulkanRenderer::reset(ANativeWindow *newWindow, AAssetManager *newManager) {
-    m_core.setANativeData(newWindow, newManager);
-    if (m_initialized) {
-        m_core.createSurface();
-        recreateSwapChain();
-    }
 }
 
 void VulkanRenderer::recreateSwapChain() {

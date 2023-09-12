@@ -8,8 +8,10 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.WindowManager.LayoutParams
+import androidx.compose.runtime.snapshots.Snapshot.Companion.observe
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.lifecycle.Observer
 import com.google.androidgamesdk.GameActivity
 import kotlin.system.exitProcess
 
@@ -19,6 +21,27 @@ class VulkanActivity : GameActivity() {
         super.onCreate(savedInstanceState)
         hideSystemUI()
         supportFragmentManager.beginTransaction().add(R.id.content, ControlsFragment()).commit()
+        AppState.getHue().observe(this, Observer { hue ->
+            applyFilterOverJNI(
+                hue,
+                AppState.getSaturation().value!!,
+                AppState.getIntensity().value!!
+            )
+        })
+        AppState.getSaturation().observe(this, Observer { saturation ->
+            applyFilterOverJNI(
+                AppState.getHue().value!!,
+                saturation,
+                AppState.getIntensity().value!!
+            )
+        })
+        AppState.getIntensity().observe(this, Observer { intensity ->
+            applyFilterOverJNI(
+                AppState.getHue().value!!,
+                AppState.getSaturation().value!!,
+                intensity
+            )
+        })
     }
 
     private fun hideSystemUI() {
@@ -66,4 +89,14 @@ class VulkanActivity : GameActivity() {
             System.loadLibrary("my_engine")
         }
     }
+
+    /**
+     * A native method for image modifying over affecting HSV color system of original image,
+     * factors are in range [0.0; 1.0] where 0.5 is default component
+     */
+    external fun applyFilterOverJNI(
+        hueFactor: Float,
+        saturationFacto: Float,
+        intensityFacto: Float,
+    ): Boolean
 }

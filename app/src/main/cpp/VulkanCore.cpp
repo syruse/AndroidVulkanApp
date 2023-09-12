@@ -14,7 +14,7 @@ MyDebugReportCallback(VkDebugReportFlagsEXT flags, VkDebugReportObjectTypeEXT ob
     return VK_FALSE;
 }
 
-VulkanCore::~VulkanCore() {
+void VulkanCore::clean() {
 #ifdef _DEBUG
     // Get the address to the vkCreateDebugReportCallbackEXT function
     auto func =
@@ -30,13 +30,21 @@ VulkanCore::~VulkanCore() {
     vkDestroyInstance(m_inst, nullptr);
 }
 
-void VulkanCore::setANativeData(ANativeWindow *window, AAssetManager *assetManager) {
-    assert(window && assetManager);
-    m_winController.reset(window);
-    m_assetManager = assetManager;
+VulkanCore::~VulkanCore() {
+    clean();
 }
 
-void VulkanCore::init() {
+void VulkanCore::init(ANativeWindow *window, AAssetManager *assetManager) {
+    assert(window && assetManager);
+
+    // reset if needed
+    if (m_winController || m_assetManager) {
+        clean();
+    }
+
+    m_winController.reset(window);
+    m_assetManager = assetManager;
+
     std::vector<VkExtensionProperties> ExtProps;
     VulkanEnumExtProps(ExtProps);
 
@@ -58,10 +66,6 @@ void VulkanCore::createSurface() {
             .pNext = nullptr,
             .flags = 0,
             .window = m_winController.get()};
-
-    if (m_surface) {
-        vkDestroySurfaceKHR(m_inst, m_surface, nullptr);
-    }
 
     VK_CHECK(vkCreateAndroidSurfaceKHR(m_inst, &create_info,
                                        nullptr, &m_surface));

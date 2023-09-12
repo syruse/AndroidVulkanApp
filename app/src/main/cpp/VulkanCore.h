@@ -18,9 +18,7 @@ class VulkanCore {
 public:
     ~VulkanCore();
 
-    void setANativeData(ANativeWindow *window, AAssetManager *assetManager);
-
-    void init();
+    void init(ANativeWindow *window, AAssetManager *assetManager);
 
     VkPhysicalDevice getPhysDevice() const;
 
@@ -60,6 +58,8 @@ private:
     void selectPhysicalDevice();
 
     void createLogicalDevice();
+
+    void clean();
 
     std::unique_ptr<ANativeWindow, ANativeWindowDeleter> m_winController = nullptr;
     AAssetManager *m_assetManager = nullptr;
