@@ -1,28 +1,44 @@
 #version 450
 
-// Colour passed to the fragment shader
-layout(location = 0) out vec3 fragColor;
-
-// Uniform buffer containing an MVP matrix.
-// Currently the vulkan backend only sets the rotation matix
-// required to handle device rotation.
+layout(location = 0) out vec2 fragTexCoord;
+layout(location = 1) out vec4 fragHSVFactors;// last component indicates whether filter is enabled\disabled
+// Currently MVP containing rotation matix
 layout(binding = 0) uniform UniformBufferObject {
     mat4 MVP;
 } ubo;
 
-vec2 positions[3] = vec2[](
-    vec2(0.0, -0.5),
-    vec2(0.5, 0.5),
-    vec2(-0.5, 0.5)
+layout(push_constant) uniform constants
+{
+    vec3 hsv_factors;
+} PushConstants;
+
+vec2 positions[6] = vec2[](
+vec2(-0.9, -0.5),
+vec2(-0.1, -0.5),
+vec2(-0.1, 0.5),
+vec2(-0.1, 0.5),
+vec2(-0.9, 0.5),
+vec2(-0.9, -0.5)
 );
 
-vec3 colors[3] = vec3[](
-    vec3(0.67, 0.1, 0.2),
-    vec3(0.67, 0.1, 0.2),
-    vec3(0.67, 0.1, 0.2)
+vec2 tex_coords[6] = vec2[](
+vec2(0.0f, 0.0f),
+vec2(1.0f, 0.0f),
+vec2(1.0f, 1.0f),
+vec2(1.0f, 1.0f),
+vec2(0.0f, 1.0f),
+vec2(0.0f, 0.0f)
 );
 
 void main() {
-    gl_Position = ubo.MVP * vec4(positions[gl_VertexIndex], 0.0, 1.0);
-    fragColor = colors[gl_VertexIndex];
+    const int index = gl_VertexIndex % 6;
+    const bool isRightQuad = gl_VertexIndex >= 6 ? true : false;
+    vec2 pos = positions[index];
+    fragHSVFactors = vec4(PushConstants.hsv_factors, 0.0);
+    if (isRightQuad) {
+        pos.x = 1.0 + pos.x;
+        fragHSVFactors.a = 1.0;// enabling filter for the second quad only
+    }
+    gl_Position = ubo.MVP * vec4(pos, 0.0, 1.0);
+    fragTexCoord = tex_coords[index];
 }

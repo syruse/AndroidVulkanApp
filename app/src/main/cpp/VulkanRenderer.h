@@ -1,13 +1,28 @@
 #include "VulkanCore.h"
-
 #include <array>
+#include <string_view>
 
 class VulkanRenderer {
+    static constexpr uint32_t MAX_FRAMES_IN_FLIGHT = 2;
+    static constexpr VkFormat TEXTURE_FORMAT = VK_FORMAT_R8G8B8A8_UNORM;
+    static constexpr std::string_view TEXTURE_NAME = "texture.png";
+
+    struct Texture {
+        VkSampler sampler;
+        VkImage image;
+        VkImageLayout imageLayout;
+        VkDeviceMemory mem;
+        VkImageView view;
+        int32_t width;
+        int32_t height;
+    };
+
     struct UBO_Data {
         alignas(16) std::array<float, 16> MVP; // aligned as vec4 or 16bytes
     };
 
     struct PushConstant_Data {
+        alignas(16) std::array<float, 3> HSV; // HSV factors for modifying
     };
 
 public:
@@ -67,10 +82,17 @@ private:
 
     void createDescriptorSets();
 
-    void establishDisplaySizeIdentity();
+    void loadTextureFromFile(const char *filePath,
+                             Texture *texture,
+                             VkImageUsageFlags usage, VkFlags required_props);
+
+    void createTexture();
+
+    VkResult allocateMemoryTypeFromProperties(uint32_t typeBits,
+                                              VkFlags requirements_mask,
+                                              uint32_t *typeIndex);
 
 private:
-    uint32_t m_max_frames_in_flight = 2;
     VulkanCore m_core;
     bool m_initialized{false};
     VkSwapchainKHR m_swapChain{0u};
@@ -78,8 +100,10 @@ private:
     std::vector<VkImageView> m_swapChainImageViews{};
     std::vector<VkFramebuffer> m_swapChainFramebuffers{};
     VkCommandPool m_commandPool{0u};
-    std::vector<VkCommandBuffer> m_commandBuffers{};
+    std::array<VkCommandBuffer, MAX_FRAMES_IN_FLIGHT> m_commandBuffers{};
 
+    PushConstant_Data m_hsvFactors{0.5f, 0.5f, 0.5f};
+    Texture m_texture;
     VkQueue m_queue{nullptr};
 
     VkRenderPass m_renderPass{0u};
@@ -87,14 +111,14 @@ private:
     VkPipelineLayout m_pipelineLayout{0u};
     VkPipeline m_graphicsPipeline{0u};
 
-    std::vector<VkBuffer> m_uniformBuffers{};
-    std::vector<VkDeviceMemory> m_uniformBuffersMemory{};
+    std::array<VkBuffer, MAX_FRAMES_IN_FLIGHT> m_uniformBuffers{};
+    std::array<VkDeviceMemory, MAX_FRAMES_IN_FLIGHT> m_uniformBuffersMemory{};
 
-    std::vector<VkSemaphore> m_imageAvailableSemaphores{};
-    std::vector<VkSemaphore> m_renderFinishedSemaphores{};
-    std::vector<VkFence> m_inFlightFences{};
+    std::array<VkSemaphore, MAX_FRAMES_IN_FLIGHT> m_imageAvailableSemaphores{};
+    std::array<VkSemaphore, MAX_FRAMES_IN_FLIGHT> m_renderFinishedSemaphores{};
+    std::array<VkFence, MAX_FRAMES_IN_FLIGHT> m_inFlightFences{};
     VkDescriptorPool m_descriptorPool{0u};
-    std::vector<VkDescriptorSet> m_descriptorSets{};
+    std::array<VkDescriptorSet, MAX_FRAMES_IN_FLIGHT> m_descriptorSets{};
 
     uint32_t m_currentFrame{0u};
     bool m_orientationChanged{false};

@@ -15,7 +15,7 @@ MyDebugReportCallback(VkDebugReportFlagsEXT flags, VkDebugReportObjectTypeEXT ob
 }
 
 VulkanCore::~VulkanCore() {
-#ifdef WITH_VK_VALIDATION
+#ifdef _DEBUG
     // Get the address to the vkCreateDebugReportCallbackEXT function
     auto func =
             reinterpret_cast<PFN_vkDestroyDebugUtilsMessengerEXT>(vkGetInstanceProcAddr(m_inst,
@@ -59,6 +59,10 @@ void VulkanCore::createSurface() {
             .flags = 0,
             .window = m_winController.get()};
 
+    if (m_surface) {
+        vkDestroySurfaceKHR(m_inst, m_surface, nullptr);
+    }
+
     VK_CHECK(vkCreateAndroidSurfaceKHR(m_inst, &create_info,
                                        nullptr, &m_surface));
     LOGD("Surface created");
@@ -74,13 +78,23 @@ const VkSurfaceFormatKHR &VulkanCore::getSurfaceFormat() const {
     return m_physDevices.m_surfaceFormats[m_gfxDevIndex][0];
 }
 
-const VkSurfaceCapabilitiesKHR &VulkanCore::getSurfaceCaps() const {
+VkSurfaceCapabilitiesKHR VulkanCore::getSurfaceCaps() {
     assert(m_gfxDevIndex >= 0);
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(
             getPhysDevice(), m_surface,
             const_cast<VkSurfaceCapabilitiesKHR *>(&(m_physDevices.m_surfaceCaps[m_gfxDevIndex])));
 
-    return m_physDevices.m_surfaceCaps[m_gfxDevIndex];
+    VkSurfaceCapabilitiesKHR capabilities = m_physDevices.m_surfaceCaps[m_gfxDevIndex];
+    if (capabilities.currentTransform & VK_SURFACE_TRANSFORM_ROTATE_90_BIT_KHR ||
+        capabilities.currentTransform & VK_SURFACE_TRANSFORM_ROTATE_270_BIT_KHR) {
+        // Swap to get identity width and height
+        uint32_t width = capabilities.currentExtent.width;
+        uint32_t height = capabilities.currentExtent.height;
+        capabilities.currentExtent.height = width;
+        capabilities.currentExtent.width = height;
+    }
+
+    return capabilities;
 }
 
 void VulkanCore::selectPhysicalDevice() {
@@ -124,19 +138,19 @@ void VulkanCore::createInstance() {
     appInfo.apiVersion = VK_API_VERSION_1_0;
 
     const char *pInstExt[] = {
-#ifdef WITH_VK_VALIDATION
+#ifdef _DEBUG
             VK_EXT_DEBUG_UTILS_EXTENSION_NAME,
 #endif
             "VK_KHR_surface", "VK_KHR_android_surface"};
 
-#ifdef WITH_VK_VALIDATION
+#ifdef _DEBUG
     const char *pInstLayers[] = {"VK_LAYER_KHRONOS_validation"};
 #endif
 
     VkInstanceCreateInfo instInfo = {};
     instInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     instInfo.pApplicationInfo = &appInfo;
-#ifdef WITH_VK_VALIDATION
+#ifdef _DEBUG
     instInfo.enabledLayerCount = ARRAY_SIZE(pInstLayers);
     instInfo.ppEnabledLayerNames = pInstLayers;
 #endif
@@ -147,7 +161,7 @@ void VulkanCore::createInstance() {
     LOGD("vkCreateInstance %d\n", res);
     VK_CHECK(res);
 
-#ifdef WITH_VK_VALIDATION
+#ifdef _DEBUG
     // Get the address to the vkCreateDebugReportCallbackEXT function
     PFN_vkCreateDebugReportCallbackEXT my_vkCreateDebugReportCallbackEXT =
             reinterpret_cast<PFN_vkCreateDebugReportCallbackEXT>(vkGetInstanceProcAddr(m_inst,

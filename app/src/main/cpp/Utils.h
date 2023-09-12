@@ -16,12 +16,12 @@
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
-#define VK_CHECK(err)                         \
-  do {                                        \
-    if (err != VK_SUCCESS) {                  \
-      LOGE("Detected Vulkan error: %d", err); \
-      abort();                                \
-    }                                         \
+#define VK_CHECK(err)                                                                   \
+  do {                                                                                  \
+    if (err != VK_SUCCESS) {                                                            \
+      LOGE("Detected Vulkan error{%d} at file{%s}, line{%d}", err, __FILE__, __LINE__); \
+      abort();                                                                          \
+    }                                                                                   \
   } while (0)
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
@@ -37,6 +37,11 @@ namespace Utils {
         std::vector<VkSurfaceCapabilitiesKHR> m_surfaceCaps;
         std::vector<std::vector<VkPresentModeKHR>> m_presentModes;
     };
+
+    void setImageLayout(VkCommandBuffer cmdBuffer, VkImage image,
+                        VkImageLayout oldImageLayout, VkImageLayout newImageLayout,
+                        VkPipelineStageFlags srcStages,
+                        VkPipelineStageFlags destStages);
 
     void VulkanCheckValidationLayerSupport();
 
